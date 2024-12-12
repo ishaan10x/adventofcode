@@ -7,7 +7,7 @@ reports = []
 numValid = 0
 
 # read in reports as int list
-with open('C:\\Users\\Ishaan\\myprojects\\adventofcode\\2024\\python\\day_2\\data_a.txt', 'r') as file:
+with open('C:\\Users\\Ishaan\\myprojects\\adventofcode\\2024\\python\\day_2\\input.txt', 'r') as file:
     for line in file:
         reports.append([int(value) for value in line.split()])
 
@@ -40,6 +40,21 @@ for report in reports:
 # print result
 print(numValid)
 
+# PART 2
+num_valid_dampened = 0
 
-        
+def is_valid_dampened(report):
+    if isValid(report):
+        return True
+    else:
+        # brute force removal of each level and check validity
+        for i in range(len(report)):
+            if isValid(report[:i] + report[i+1:]):
+                return True
+    return False
 
+for report in reports:
+    if (is_valid_dampened(report)):
+        num_valid_dampened += 1
+
+print(num_valid_dampened)

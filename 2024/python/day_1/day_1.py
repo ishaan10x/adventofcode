@@ -6,7 +6,7 @@ rightList = []
 distanceList = []
 
 # read ids into left and right list
-with open('C:\\Users\\Ishaan\\myprojects\\adventofcode\\2024\\python\\day1\\data_a.txt', 'r') as file:
+with open('C:\\Users\\Ishaan\\myprojects\\adventofcode\\2024\\python\\day1\\input.txt', 'r') as file:
     for line in file:
         words = line.split()
         bisect.insort(rightList, int(words[1]))
